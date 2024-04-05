@@ -51,6 +51,12 @@
                                     <span t-field="x.invoice_list.company_id.city"/>, <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d %B %Y')"/>
                                 </td>
                             </tr>
+                            <tr>
+                                <td style="width: 70%; border: 0px;"></td>
+                                <td style="width: 30%; text-align: center; font-size: 1%px; padding: 5px; border: 0px; padding-top: 150px;">
+                                    <div style="border-bottom: 1px solid; width: 80%; margin: auto;"/>
+                                </td>
+                            </tr>
                             <!-- <tr>
                                 <td style="width: 70%; border: 0px;"></td>
                                 <td style="width: 30%; text-align: center; font-size: 1%px; padding: 5px; border: 0px; padding-top: 100px;">
