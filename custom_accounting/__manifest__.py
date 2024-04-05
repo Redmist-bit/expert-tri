@@ -27,7 +27,9 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'views/report_tagihan.xml',
+        'report/report.xml',
+        'report/follow_up_report.xml',
+        'report/report_invoice.xml',     
     ],
     # only loaded in demonstration mode
     'demo': [
