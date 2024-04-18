@@ -21,11 +21,12 @@
     </record> 
 
     <record id="report_multiple_invoice" model="ir.actions.report">
-        <field name="name">kwitansi</field>
+        <field name="name">Kwitansi</field>
         <field name="model">account.move</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">custom_accounting.report_kwitansi</field>
         <field name="report_file">custom_accounting.report_kwitansi</field>
+        <field name="print_report_name">'Kwitansi Report'</field>
         <field name="binding_model_id" ref="account.model_account_move"/>
         <field name="binding_type">report</field>
     </record>
