@@ -28,6 +28,7 @@
         'views/views.xml',
         'views/templates.xml',
         'report/report.xml',
+        # 'report/header.xml',
         'report/follow_up_report.xml',
         'report/report_invoice.xml',     
     ],
