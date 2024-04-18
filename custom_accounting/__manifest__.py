@@ -20,7 +20,9 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','base_accounting_kit','account','contacts'],
+    'depends': ['base','web','base_accounting_kit','account','contacts'],
+        # 'depends': ['base','web','contacts','sale','sale_management','product','purchase','account','base_accounting_kit'],
+
 
     # always loaded
     'data': [
@@ -28,9 +30,9 @@
         'views/views.xml',
         'views/templates.xml',
         'report/report.xml',
-        # 'report/header.xml',
+        'report/report_kwitansi.xml',
         'report/follow_up_report.xml',
-        'report/report_invoice.xml',     
+        'report/report_invoice.xml',    
     ],
     # only loaded in demonstration mode
     'demo': [
