@@ -23,7 +23,7 @@
 
                         <tr>
                             <t t-set="no" t-value="1"/>
-                            <t t-foreach="x.invoice_list" t-as="inv">
+                            <t t-foreach="x.invoice_list.filtered(lambda r: r.to_check == True)" t-as="inv">
                                 <tr>
                                     <td style="font-size:13px; text-align: center; color:black; padding:5px;"><span t-esc="no"/></td>
                                     <td style="font-size:13px; text-align: left; color:black; padding:5px;"><span t-field="inv.name"/></td>
