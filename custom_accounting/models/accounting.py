@@ -12,3 +12,14 @@ class custom_accounting(models.Model):
                                         ('move_type', '=', 'out_invoice'),
                                         # ('move_type', '=', 'out_invoice'),
                                         ('state','=','posted')]))
+    
+class ModelName(models.Model):
+    
+    _inherit = 'account.move'
+
+    to_check = fields.Boolean(
+    string='To Check',
+    default=True,
+    tracking=True,
+    help="testitng",
+)
