@@ -23,7 +23,7 @@
 
                         <tr>
                             <t t-set="no" t-value="1"/>
-                            <t t-foreach="x.invoice_list" t-as="inv">
+                            <t t-foreach="x.invoice_list.filtered(lambda r: r.to_check == True)" t-as="inv">
                                 <tr>
                                     <td style="font-size:13px; text-align: center; color:black; padding:5px;"><span t-esc="no"/></td>
                                     <td style="font-size:13px; text-align: left; color:black; padding:5px;"><span t-field="inv.name"/></td>
@@ -38,7 +38,7 @@
                         </tr>
 
                         <tr style="border-top: 0px;">
-                            <td style="border: 0px; border-bottom: 0px; border-right: 0px; font-size: 13px; text-align: right; color: black; padding: 5px; width: 5%; font-weight: bold;" colspan="6">Rp <span t-esc="'{0:,.2f}'.format(int(x.total_overdue))" t-field-options='{"widget": "monetary", "display_currency": x.currency_id}'/></td>
+                            <td style="border: 0px; border-bottom: 0px; border-right: 0px; font-size: 13px; text-align: right; color: black; padding: 5px; width: 5%; font-weight: bold;" colspan="6">Rp <span t-esc="'{0:,.2f}'.format(int(sum(record.amount_total_signed for record in x.invoice_list.filtered(lambda r: r.to_check == True))))" t-field-options='{"widget": "monetary", "display_currency": x.currency_id}'/></td>
                             <td style="border: 0px; border-bottom: 0px; padding: 5px; width: 5%;"></td>
                         </tr>
                     </table>
