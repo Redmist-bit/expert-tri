@@ -1,0 +1,48 @@
+.btn_learn_more{
+    text-align: left;
+    margin-left: 15px;
+    width: 100%;
+    margin-bottom: 10px; 
+}
+.icon_learn_more{
+    margin-left: 10px;
+}
+.title_service{
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+.card_custom{
+    border: none;
+    background: transparent;
+}
+.contentService{
+    position: absolute;
+    padding: 15px;
+    background: transparent;
+    color: transparent;
+    transition: 100ms;
+    height: 100%;
+    border: 5px solid transparent;
+    border-radius: 15px;
+  }
+.contentService:hover{
+    position: absolute;
+    padding: 15px;
+    background: white;
+    color: black;
+    height: 100%;
+    border: 5px solid #0098CF;
+    border-radius: 15px;
+  }
+.o_img_002{
+    transition: 100ms;
+    padding: 10px;
+}
+.o_img_002:hover{transform: scale(1.1);}
+.o_img_002:hover+.contentService+.btn_learn_more{
+    position: absolute;
+    padding: 15px;
+    background: linear-gradient(0deg, #fff0 -3%, #000 70%);
+    color: #fff;
+    z-index: 2 !important;
+    }
