@@ -23,3 +23,12 @@ class ModelName(models.Model):
     tracking=True,
     help="testitng",
 )
+
+class NamaModel(models.Model):
+    _inherit = 'stock.move'
+
+    
+    description_picking = fields.Text('Description of Picking', related='picking_id.sale_id.order_line.name')
+    
+
+    
