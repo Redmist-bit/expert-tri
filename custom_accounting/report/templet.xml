@@ -1,36 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<template id="custom_purchase_header_footer" inherit_id="web.external_layout_boxed">
+    <template id="custom_purchase_header_footer" inherit_id="web.external_layout_bold">
 
-<xpath expr="//div[hasclass('text-center')]" position="replace">
+    <!-- <xpath expr="//field[@name='date_order']" position="after">
+        <field name="note"/>
+    </xpath> -->
 
-<t t-if="docs._get_view()[1].name == 'account.move.form'">
+        <xpath expr="//div[@t-attf-class='footer o_clean_footer o_company_#{company.id}_layout']//div[@class='row']" position="replace">
 
-</t>
+        <div class="row">
+                <div class="text-center">
+                    <table style=" width:100%;">
+                        <tr style="">
+                            <td colspan="5" style="height:135px;"></td>
+                            <td colspan="2" style="height:135px; "></td>
+                        </tr>
+                    </table>
+                </div>
 
-<t t-else="">
+<!--                 
        
-        <div class="text-center">
-                <table style=" width:100%;">
-                <tr style="">
-                <td colspan="5" style="height:135px;  ">   
-                    <!-- <span style="float:left; margin-left:20px;">Penerima,</span>     -->
-                </td>
-                
-                <td colspan="2" style="height:135px; ">   
-                    <!-- <span style="float:left;margin-left:20px;">Disetujui,</span>    -->
-                </td>
-                </tr>
-            </table>
-        </div>
-    
-</t>
-    
-</xpath>
+                <div class="col-4">
+                    <span t-if="company.is_company_details_empty" t-field="company.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>
+                    <span t-else="" t-field="company.company_details"/>
+                </div>
+                <div class="col-3">
+                    <div class="mt0 mb0 h5" t-field="company.report_header"/>
+                </div>
+                <div class="col-1">
+                    <ul t-if="report_type == 'pdf'" class="list-inline pagenumber float-end text-center">
+                        <li class="list-inline-item"><strong><span class="page"/></strong></li>
+                        
+                    </ul>
+                </div> -->
+            </div>
+            
+        </xpath>
 
-        
+            
 
- </template>
+    </template>
 
 
 </odoo>
