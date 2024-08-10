@@ -29,6 +29,8 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'report/ds.xml',
+        'report/templet.xml',
         'report/report.xml',
         'report/report_kwitansi.xml',
         'report/follow_up_report.xml',

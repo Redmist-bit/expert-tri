@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="a_content_bar" name="Items">
+        <t t-set="url" value="url or '#'"/>
+        <section class="a_columns o_cc o_cc2 pt32 pb32" data-vcss="001">
+            <div class="s_allow_columns container-fluid">
+                <div class="row">
+                    <div class="content_bar_container">
+                        <div class="content_bar_right_to_left o_colored_level col-lg-10 offset-lg-1">
+                            <img class="img_logo_bar" src="/custom_web/static/src/img/trusted_by_logo/logo_1.png" alt=""/>
+                        </div>
+                        <div class="content_bar_left_to_right o_colored_level offset-lg-2 col-lg-8">
+                            <img class="img_logo_bar" src="/custom_web/static/src/img/trusted_by_logo/logo_2.png" alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

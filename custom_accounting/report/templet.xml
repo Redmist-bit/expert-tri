@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="custom_purchase_header_footer" inherit_id="web.external_layout_boxed">
+
+<xpath expr="//div[hasclass('text-center')]" position="replace">
+
+<t t-if="docs._get_view()[1].name == 'account.move.form'">
+
+</t>
+
+<t t-else="">
+       
+        <div class="text-center">
+                <table style=" width:100%;">
+                <tr style="">
+                <td colspan="5" style="height:135px;  ">   
+                    <!-- <span style="float:left; margin-left:20px;">Penerima,</span>     -->
+                </td>
+                
+                <td colspan="2" style="height:135px; ">   
+                    <!-- <span style="float:left;margin-left:20px;">Disetujui,</span>    -->
+                </td>
+                </tr>
+            </table>
+        </div>
+    
+</t>
+    
+</xpath>
+
+        
+
+ </template>
+
+
+</odoo>

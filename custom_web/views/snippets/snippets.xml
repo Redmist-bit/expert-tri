@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- <template id="custom_snippet" inherit="inherit_snippets"> -->
+     <template id="custom_snippet" inherit_id="web_editor.snippets">
+        <xpath expr="//div[@id='o_scroll']/t[@id='default_snippets']" position="after">
+            <div id="snippet_animate" class="o_panel">
+                <div class="o_panel_header">Custom Snippet</div>
+                <div class="o_panel_body">
+                    <t t-snippet="custom_web.a_content_bar"
+                       t-thumbnail="/animated_snippet/static/src/img/a_feature_thumb.svg">
+                        <keywords>Features</keywords>
+                    </t>
+                    <t t-snippet="custom_web.a_content_service"
+                       t-thumbnail="/animated_snippet/static/src/img/a_columns_thumb.svg">
+                        <keywords>Service</keywords>
+                    </t>
+                    <t t-snippet="custom_web.a_content_slideshow_testimonial"
+                       t-thumbnail="/animated_snippet/static/src/img/a_feature_thumb.svg">
+                        <keywords>Features</keywords>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+     </template> 
+
+</odoo>
