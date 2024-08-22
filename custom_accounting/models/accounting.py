@@ -27,8 +27,15 @@ class ModelName(models.Model):
 class NamaModel(models.Model):
     _inherit = 'stock.move'
 
+    sale_line_id = fields.Many2one('sale.order.line', string='Sale Order Line')
+    description_picking = fields.Text('Description of Picking', related='sale_line_id.name')
+
+class SaleOrderLine(models.Model):
+    _inherit = 'sale.order.line'
+
+    stock_move_ids = fields.One2many('stock.move', 'sale_line_id', string='Stock Moves')
+
     
-    description_picking = fields.Text('Description of Picking', related='picking_id.sale_id.order_line.name')
     
 
     
