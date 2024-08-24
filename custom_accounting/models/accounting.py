@@ -6,6 +6,7 @@ import math
 import numpy_financial 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+import locale
 
 
 
@@ -31,6 +32,26 @@ class ModelName(models.Model):
     tracking=True,
     help="testitng",
 )
+    
+    def set_invoice_date(self,date):
+            indonesian_month  = ['NN'
+            , 'Januari'
+            , 'Februari'
+            , 'Maret'
+            , 'April'
+            , 'Mei'
+            , 'Juni'
+            , 'Juli'
+            , 'Agustus'
+            , 'September'
+            , 'Oktober'
+            , 'November'
+            , 'Desember']
+           
+            date_format = datetime.strptime(str(date), '%d %B %Y')
+            day = '{:02}'.format(date_format.day)
+            date_return = day+' '+str(indonesian_month[int(date_format.month)])+' '+str(date_format.year)
+            return date_return
 
 class NamaModel(models.Model):
     _inherit = 'stock.move'
