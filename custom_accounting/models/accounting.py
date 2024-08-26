@@ -1,12 +1,12 @@
 from odoo import Command, _, api, fields, models
 from odoo.exceptions import UserError,ValidationError
+# import math
+# import logging
 import math
-import logging
-import math
-import numpy_financial 
+# import numpy_financial 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-import locale
+# import locale
 
 
 
@@ -69,12 +69,9 @@ class SaleOrderLine(models.Model):
 
 class Pruchase(models.Model):
     _inherit = 'purchase.order.line'
-    # purchase_line_ids = fields.Many2one('sale.order.line', string='Sale Order Line')
 
     name = fields.Text(string='Description', related='sale_line_id.name', required=True, compute='_compute_price_unit_and_date_planned_and_name', store=True, readonly=False)
     
-    
-        
     
 
     @api.onchange('name')
