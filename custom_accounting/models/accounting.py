@@ -67,18 +67,17 @@ class SaleOrderLine(models.Model):
     # purchase_ids = fields.One2many('purchase.order.line', 'sale_line_id', string='Stock Moves')
 
 
-# class Pruchase(models.Model):
-#     _inherit = 'purchase.order.line'
+class Pruchase(models.Model):
+    _inherit = 'purchase.order.line'
 
-    # name = fields.Text(string='Description', related='sale_line_id.name', required=True, 
-    #                    compute='_compute_price_unit_and_date_planned_and_name', 
-    #                    store=True, readonly=False)
+    name = fields.Text(string='Description', related='sale_line_id.name', required=True, compute='_compute_price_unit_and_date_planned_and_name', store=True, readonly=False)
     
     
 
-#     @api.onchange('name')
-#     def _onchange_field(self):
-#         self.name = self.sale_line_id
+    @api.onchange('name')
+    def _onchange_field(self):
+        if self.sale_line_id:
+            self.name = self.sale_line_id
 
 
     
