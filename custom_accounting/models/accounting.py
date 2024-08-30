@@ -64,23 +64,23 @@ class SaleOrderLine(models.Model):
 
     stock_move_ids = fields.One2many('stock.move', 'sale_line_id', string='Stock Moves')
     purchase_line_ids = fields.One2many('purchase.order.line', 'sale_line_id', string='Purchase Order Lines', readonly=True, copy=False)
-    # purchase_ids = fields.One2many('purchase.order.line', 'sale_line_id', string='Stock Moves')
-
 
 class Pruchase(models.Model):
     _inherit = 'purchase.order.line'
 
-    name = fields.Text(string='Description', related='sale_line_id.name', required=True, compute='_compute_price_unit_and_date_planned_and_name', store=True, readonly=False)
     
-    
+    sale_line_id = fields.Many2one('sale.order.line', string='Sale Order Line')
 
-    @api.onchange('name')
-    def _onchange_field(self):
-        if self.sale_line_id:
-            self.name = self.sale_line_id
+class purdchaseOrder(models.Model):
+    _inherit = 'purchase.order'
+
+    def button(self):
+        for a in self.order_line:
+            if a.sale_line_id.name:
+                a.name = a.sale_line_id.name
 
 
-    
+
     
 
 

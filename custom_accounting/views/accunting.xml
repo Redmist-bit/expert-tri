@@ -12,5 +12,25 @@
             </xpath>
         </field>
     </record>
+
+
+    <record model="ir.ui.view" id="purchase_order_forminh">
+        <field name="name">purchase_order_forminh</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <!-- <xpath expr="//page[@name='products']//field[@name='order_line']//tree//field[@name='name']" position="attributes"> -->
+            <xpath expr="//field[@name='order_line']//tree//field[@name='name']" position="attributes">
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <!-- <xpath expr="//field[@name='order_line']//tree//field[@name='name']" position="after">
+                <field name="trigerline" force_save="1" invisible="1"/>
+            </xpath> -->
+             <xpath expr="//header//button[@name='print_quotation']" position="after">
+                <button name="button" string="Load From SO" type="object" invisible="" attrs="{'invisible': [('origin','=', False)]}" />
+               
+            </xpath>
+        </field>
+    </record>
      
 </odoo>
