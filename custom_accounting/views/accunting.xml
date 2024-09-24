@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    
+  
+    <record model="ir.ui.view" id="nama_model_form">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="attributes">
+                 <attribute name="force_save">1</attribute>
+            </xpath>
+        </field>
+    </record>
 
+
+    <record model="ir.ui.view" id="purchase_order_forminh">
+        <field name="name">purchase_order_forminh</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <!-- <xpath expr="//page[@name='products']//field[@name='order_line']//tree//field[@name='name']" position="attributes"> -->
+            <xpath expr="//field[@name='order_line']//tree//field[@name='name']" position="attributes">
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <!-- <xpath expr="//field[@name='order_line']//tree//field[@name='name']" position="after">
+                <field name="trigerline" force_save="1" invisible="1"/>
+            </xpath> -->
+             <xpath expr="//header//button[@name='print_quotation']" position="after">
+                <button name="button" string="Load From SO" type="object" invisible="" attrs="{'invisible': [('origin','=', False)]}" />
+               
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="account_move_kode_trans">
+        <field name="name">account.move</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="l10n_id_efaktur.account_move_efaktur_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='l10n_id_kode_transaksi']" position="after"> 
+                <field name="l10n_id_kode_transaksi" attrs="{'invisible': ['|', ('country_code', '!=', 'ID'), ('l10n_id_need_kode_transaksi', '=', True)], 'required': [('l10n_id_need_kode_transaksi', '=', True)]}"/>
+
+                
+            </xpath>
+        </field>
+    </record>
+     
 </odoo>
