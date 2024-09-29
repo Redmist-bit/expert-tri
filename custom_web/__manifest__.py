@@ -11,7 +11,8 @@
         'views/snippets/a_content_bar_templates.xml',
         'views/snippets/a_content_service_templates.xml',
         'views/snippets/a_content_slideshow_testimonial_template.xml',
-        'views/contract.xml'
+        'views/contract.xml',
+        'views/task.xml'
     ],
      'assets': {
         'web.assets_frontend': [
