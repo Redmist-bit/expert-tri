@@ -28,10 +28,10 @@
                     <div class="row">
                         <div class="col-7" name="div_incoming_address">
                             <t t-set="show_partner" t-value="False" />
-                            <div name="vendor_address" t-if="o.picking_type_id.code=='incoming' and partner">
+                            <!-- <div name="vendor_address" t-if="o.picking_type_id.code=='incoming' and partner">
                                 <span><strong>Vendor Address:</strong></span>
                                 <t t-set="show_partner" t-value="True" />
-                            </div>
+                            </div> -->
                             <div name="customer_address" t-if="o.picking_type_id.code=='outgoing' and partner and partner != partner.commercial_partner_id">
                                 <span><strong>Customer Address:</strong></span>
                                 <t t-set="show_partner" t-value="True" />
@@ -52,6 +52,14 @@
                             <strong>Order:</strong>
                             <p t-field="o.origin"/>
                         </div>
+                        <div t-if="o.sale_id" class="col-auto" name="div_origin">
+                            <strong>No SO:</strong>
+                            <p t-field="o.sale_id"/>
+                        </div>
+                        <div t-if="o.sale_id.client_order_ref" class="col-auto" name="div_origin">
+                            <strong>Customer Reference:</strong>
+                            <p t-field="o.sale_id.client_order_ref"/>
+                        </div>
                         <div t-if="o.state" class="col-auto" name="div_sched_date">
                             <strong>Shipping Date:</strong>
                             <t t-if="o.state == 'done'">
@@ -61,6 +69,7 @@
                                 <p t-field="o.scheduled_date"/>
                            </t>
                         </div>
+                        
                     </div>
                     <table class="table table-sm" t-if="o.state!='done'" name="stock_move_table">
                         <thead>
