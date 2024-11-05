@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="project_task_view_kanban" model="ir.ui.view">
+            <field name="name">project_task.view.kanban</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.quick_create_task_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_ids']" position="after">
+                    <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}" context="{'project_id': project_id}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

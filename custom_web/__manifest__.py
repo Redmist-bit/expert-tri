@@ -5,12 +5,14 @@
     'summary': 'Custom content bar animation',
     'description': 'Adds a continuous animated content bar to the website.',
     'author': 'Your Name',
-   'depends': ['base', 'website', 'web_editor', 'animated_snippet'],
+   'depends': ['base', 'website', 'web_editor', 'animated_snippet', 'hr_contract'],
     'data': [
         'views/snippets/snippets.xml',
         'views/snippets/a_content_bar_templates.xml',
         'views/snippets/a_content_service_templates.xml',
         'views/snippets/a_content_slideshow_testimonial_template.xml',
+        'views/contract.xml',
+        'views/task.xml'
     ],
      'assets': {
         'web.assets_frontend': [

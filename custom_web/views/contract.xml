@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="hr_contract_inh_form">
+            <field name="name">hr_contract_forminh</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='information']//group//group//div[@name='wage']" position="after">
+                    <field name="insentif_pekerjaan"/>
+                    <field name="easy"/>
+                    <field name="medium"/>
+                    <field name="hard"/>
+                    <field name="very_easy"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="hr_payslip_forminh">
+            <field name="name">hr.payslip.form_inh</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll_community.view_hr_payslip_form"/>
+            <field name="arch" type="xml">
+                <!-- <xpath expr="//header//buttong[@name='action_payslip_cancel']" position="after">
+                    <button name="view_task" string="View Task" type="object" attrs="{'invisible':[('state', '!=', 'done')]}"/>
+                </xpath> -->
+                <!-- <button name="view_task"
+                    string="View Task"
+                    type="object"
+                /> -->
+                <!-- <xpath expr="//button[@name='compute_sheet']" position="after">
+                    <button string="View Task" name="view_task" attrs="{'invisible':[('state','!=','done')]}" type="object" class="oe_highlight"/>
+                </xpath> -->
+                <xpath expr="//page[2]" position="after">
+                    <page name="task" string="Task">
+                        <field name="task_ids" options="{'no_open': True, 'no_create': True}"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
