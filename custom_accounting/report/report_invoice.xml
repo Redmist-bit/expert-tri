@@ -256,7 +256,7 @@
                 </div>
                 <br/><br/>
                 <div class="ttd" style="border:0px solid; float: right; color: black; width:30% "> 
-                <center><p>Samarinda, <span t-esc="o.set_invoice_date(o.date.strftime('%d %B %Y'))"/></p></center><br/><br/><br/><br/>
+                <center><p>Samarinda, <span t-esc="o.set_invoice_date(o.date.strftime('%d %B %Y'))"/></p></center><br/><br/><br/><br/><br/>
                     <!-- <strong><hr width="100%" style="border: 1px solid black; color: black !important;"/></strong> -->
                     <p style="margin:top;"><center>Rudy Tjan<br/></center></p>
                 </div>
