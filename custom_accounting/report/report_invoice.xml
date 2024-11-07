@@ -203,9 +203,9 @@
                             </div>
                         </div>
                     </div>
-                    <p t-if="o.move_type in ('out_invoice', 'in_refund') and o.payment_reference" name="payment_communication" class="mt-4">
+                    <!-- <p t-if="o.move_type in ('out_invoice', 'in_refund') and o.payment_reference" name="payment_communication" class="mt-4">
                         Please use the following communication for your payment : <b><span t-field="o.payment_reference"/></b>
-                    </p>
+                    </p> -->
                     <t t-set="payment_term_details" t-value="o.payment_term_details"/>
                     <div t-field="o.invoice_payment_term_id.note" name="payment_term"/>
                     <t t-if="o.invoice_payment_term_id.display_on_invoice and payment_term_details">
@@ -256,7 +256,7 @@
                 </div>
                 <br/><br/>
                 <div class="ttd" style="border:0px solid; float: right; color: black; width:30% "> 
-                <center><p>Samarinda, <span t-esc="o.set_invoice_date(o.date.strftime('%d %B %Y'))"/></p></center><br/><br/><br/><br/><br/><br/><br/>
+                <center><p>Samarinda, <span t-esc="o.set_invoice_date(o.date.strftime('%d %B %Y'))"/></p></center><br/><br/><br/><br/>
                     <!-- <strong><hr width="100%" style="border: 1px solid black; color: black !important;"/></strong> -->
                     <p style="margin:top;"><center>Rudy Tjan<br/></center></p>
                 </div>
